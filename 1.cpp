@@ -22,7 +22,7 @@ bool isPositive(int x) {
 }
 
 bool is2Digits(int x) {
-    return x/100 == 0 && x/10 != 0;
+    return x / 100 == 0 && x / 10 != 0;
 }
 
 bool isUpperCase(char x) {
@@ -57,7 +57,7 @@ int myAbs(int x) {
 double safeDiv(int x, int y) {
     if (y == 0)
         return y;
-    else 
+    else
         return double(x) / y;
 }
 
@@ -75,10 +75,10 @@ string makeDecision(int x, int y) {
     if (x != y) {
         if (x > y)
             return to_string(x) + " > " + to_string(y);
-        else 
+        else
             return to_string(x) + " < " + to_string(y);
     }
-    else 
+    else
         return to_string(x) + " = " + to_string(y);
 }
 
@@ -114,36 +114,36 @@ string age(int x) {
     else if ((x % 10 == 2 || x % 10 == 3 || x % 10 == 4) &&
         x != 12 && x != 13 && x != 14)
         return to_string(x) + " года";
-    else 
+    else
         return to_string(x) + " лет";
 }
 
 string day(int x) {
-    switch(x)
+    switch (x)
     {
-        case 1:
-            return "понедельник";
-        
-        case 2:
-            return "вторник";
+    case 1:
+        return "понедельник";
 
-        case 3:
-            return "среда";
+    case 2:
+        return "вторник";
 
-        case 4:
-            return "четверг";
+    case 3:
+        return "среда";
 
-        case 5:
-            return "пятница";
+    case 4:
+        return "четверг";
 
-        case 6:
-            return "суббота";
+    case 5:
+        return "пятница";
 
-        case 7:
-            return "воскресенье";
-        
-        default:
-            return "это не день недели";
+    case 6:
+        return "суббота";
+
+    case 7:
+        return "воскресенье";
+
+    default:
+        return "это не день недели";
     }
 }
 
@@ -196,6 +196,115 @@ void printDays(string x) {
 }
 
 
+///////////////TASK 3///////////////
+string listNums(int x) {
+    string str = "";
+    for (x; x >= 0; x--) {
+        str.insert(0, " ");
+        str.insert(0, to_string(x));
+    }
+    return str;
+}
+
+string reverseListNums(int x) {
+    string str = "";
+    for (int i = 0; i <= x; i++) {
+        str.insert(0, " ");
+        str.insert(0, to_string(i));
+    }
+    return str;
+}
+
+string chet(int x) {
+    string str = "";
+    for (int i = 0; i <= x; i+=2) {
+        str.insert(i, " ");
+        str.insert(i, to_string(i));
+    }
+    return str;
+}
+
+int pow(int x, int y) {
+    int res = 1;
+    for (y; y > 0; y--) {
+        res *= x;
+    }
+    return res;
+}   
+
+int numLen(long x) {
+    while (x > 10) {
+        x %= 10;
+    }
+    return x;
+}
+
+bool equalNum(int x) {
+    while (x > 10) {
+        if (x % 10 != (x / 10) % 10) {
+            return false;
+        }
+        x /= 10;
+    }
+    return true;
+}
+
+void square(int x) {
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < x; j++) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
+void leftTriangle(int x) {
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j <= i; j++) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+
+void rightTriangle(int x) {
+    int y = x;
+    for (x; x > 0; x--) {
+        for (int i = 0; i < x; i++) {
+            cout << " ";
+            if (i == x - 1) {
+                for (int j = 0; j < y - i; j++) {
+                    cout << "*";
+                }
+            }
+        }
+        
+        cout << "\n";
+    }
+}
+
+void guessGame() {
+    srand(time(0));
+
+    int a = 0;
+    int b = 9;
+    int ans = rand() % (b - a + 1) + a;
+    int res = 0;
+
+    cout << "Введите число от 0 до 9: ";
+    cin >> res;
+
+    int i = 1;
+    while (ans != res) {
+        i++;
+        cout << "Вы не угадали, введите число от 0 до 9:";
+        cin >> res;
+    }
+
+    cout << "Вы угадали!\n" << "Вы отгадали число за " << i << " попытки\n";
+    
+}
+
 
 int main()
 {
@@ -208,10 +317,10 @@ int main()
     cout << isPositive(-5) << "\r\n";
     cout << is2Digits(3) << "\r\n";
     cout << isUpperCase('g') << "\r\n";
-    cout << isInRange(-10,-1,5) << "\r\n";
-    cout << isDivisor(5,10) << "\r\n";
-    cout << isEqual(5,1,5) << "\r\n";
-    cout << lastNumSum(5,11) << "\r\n";
+    cout << isInRange(-10, -1, 5) << "\r\n";
+    cout << isDivisor(5, 10) << "\r\n";
+    cout << isEqual(5, 1, 5) << "\r\n";
+    cout << lastNumSum(5, 11) << "\r\n";
 
     ///////////////TASK 2///////////////
     cout << myAbs(-5) << "\r\n";
@@ -224,5 +333,17 @@ int main()
     cout << age(21) << "\r\n";
     cout << day(8) << "\r\n";
     printDays("среда");
+    ///////////////TASK 3///////////////
+    cout << listNums(5) << "\r\n";
+    cout << reverseListNums(5) << "\r\n";
+    cout << chet(10) << "\r\n";
+    cout << pow(3, 3) << "\r\n";
+    cout << numLen(123456789) << "\r\n";
+    cout << equalNum(1112) << "\r\n";
+    square(5);
+    leftTriangle(5);
+    rightTriangle(5);
+    guessGame();
+
 
 }
