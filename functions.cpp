@@ -302,14 +302,3 @@ void guessGame() {
 }
 
 
-///////////////TASK 3///////////////
-int findFirst(int arr[], int x) {
-    int sizeArr = sizeof(arr) / sizeof(arr[0]);
-    for (int i; i < sizeArr; i++) {
-        if (arr[i] == x)
-            return i;
-    }
-    return 1;
-}
-
-
