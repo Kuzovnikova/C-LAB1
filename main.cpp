@@ -42,26 +42,6 @@ int main() {
             cin >> number;
             cout << "Число двузначное? " << boolalpha << is2Digits(number) << endl;
 
-            cout << "Введите символ для проверки на заглавность: ";
-            cin >> ch;
-            cout << "Символ заглавный? " << boolalpha << isUpperCase(ch) << endl;
-
-            cout << "Введите два числа и число для проверки попадания в диапазон: ";
-            cin >> num1 >> num2 >> number;
-            cout << "Число попадает в диапазон [" << num1 << ", " << num2 << "]? "
-                << boolalpha << isInRange(num1, num2, number) << endl;
-
-            cout << "Введите два числа для проверки делимости друг друга: ";
-            cin >> num1 >> num2;
-            cout << "Один из чисел делится нацело на другой? " << boolalpha << isDivisor(num1, num2) << endl;
-
-            cout << "Введите три числа для проверки равенства: ";
-            cin >> num1 >> num2 >> number;
-            cout << "Все три числа равны? " << boolalpha << isEqual(num1, num2, number) << endl;
-
-            cout << "Введите два числа для подсчета суммы последних цифр: ";
-            cin >> num1 >> num2;
-            cout << "Сумма последних цифр: " << lastNumSum(num1, num2) << endl;
             break;
         }
 
@@ -85,26 +65,7 @@ int main() {
             cout << "Введите два числа для сравнения: ";
             cin >> num1 >> num2;
             cout << "Сравнение чисел: " << makeDecision(num1, num2) << endl;
-
-            cout << "Введите три числа для поиска максимума: ";
-            cin >> num1 >> num2 >> num3;
-            cout << "Максимальное число: " << max3(num1, num2, num3) << endl;
-
-            cout << "Введите три числа для проверки условий суммирования: ";
-            cin >> num1 >> num2 >> num3;
-            cout << "Проверка условий суммирования: " << boolalpha << sum3(num1, num2, num3) << endl;
-
-            cout << "Введите два числа для суммирования: ";
-            cin >> num1 >> num2;
-            cout << "Сумма чисел: " << sum2(num1, num2) << endl;
-
-            cout << "Введите ваш возраст: ";
-            cin >> x;
-            cout << "Возраст: " << age(x) << endl;
-
-            cout << "Введите номер дня недели (1-7): ";
-            cin >> x;
-            cout << "Название дня недели: " << day(x) << endl;
+            
             break;
         }
 
@@ -133,23 +94,6 @@ int main() {
             cin >> x;
             cout << "Длина последнего разряда: " << numLen(x) << endl;
 
-            cout << "Введите число для проверки одинаковости цифр: ";
-            cin >> x;
-            cout << "Цифры одинаковые? " << boolalpha << equalNum(x) << endl;
-
-            cout << "Введите размер стороны квадрата (*): ";
-            cin >> x;
-            square(x);
-
-            cout << "Введите высоту левого треугольника (*): ";
-            cin >> x;
-            leftTriangle(x);
-
-            cout << "Введите высоту правого треугольника (*): ";
-            cin >> x;
-            rightTriangle(x);
-
-            guessGame();
             break;
         }
 
@@ -164,3 +108,4 @@ int main() {
 
     return 0;
 }
+
